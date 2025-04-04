@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");                     // On importe mongoose qui est un ODM (Object Document Mapper) pour MongoDB. Il permet de manipuler les données de la base de données MongoDB en utilisant des objets JavaScript. Il facilite la création, la lecture, la mise à jour et la suppression de documents dans une base de données MongoDB.
 
-const BookSchema = new mongoose.Schema({                  // Gestion ici d'un model/schéma d'affichage de la légende (ou description) des livres affichés. Voir la partie "Models" du pdf des instructions données pas Openclassrooms pour vérifier quel shéma de description il faut respecter. On veut aussi enregistrer les différends contenus de books (userId,title, author, year,genre, ratings, averageRating) dans la base de données. Il s'agit ici de la representation en Javascript d'une entité en base de donnée. 
+const BookSchema = new mongoose.Schema({                  // Avec Mongoose.Schema on détermine la structure et la propriété des données concernant les livrés affichés Gestion ici d'un model/schéma d'affichage de la légende (ou description) des livres affichés.  
     userId: String,
     title: String,
     author: String,
