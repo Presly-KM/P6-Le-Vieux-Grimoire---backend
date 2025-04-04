@@ -1,12 +1,12 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose");                 // On importe mongoose qui est un ODM (Object Document Mapper) pour MongoDB. Il permet de manipuler les données de la base de données MongoDB en utilisant des objets JavaScript. Il facilite la création, la lecture, la mise à jour et la suppression de documents dans une base de données MongoDB.w
 
-const UserSchema = new mongoose.Schema({              // Cf. le modele de mongoose sur leur site officiel (pris en photo dans mon phone). Contrairment au model qui place l'objet directement (et en une seul ligne) en deuxieme argument de la fonction mongoose.model ( const Cat = mongoose.model('Cat', { name: String }); ), nous on procede autrement car en général le deuxièeme agument name on le met dans qqch qui s'appelle un Schema.On choisi donc d'écrire une nouvelle const du nom de UserShema contenant l'objet. Il s'afiit ici de la represnetaiton en javascript d"une entité en base de donnéee
+const UserSchema = new mongoose.Schema({              // Avec Mongoose.Schema on détermine la structure et la propriété des données concernant les utilisateurs se sont inscrits et donc enregistrés sur le site web 
   email: String,
   password: String
 });
 
-const User = mongoose.model("User", UserSchema);      // Cf. le modele de mongoose sur leur site officiel (pris en photo dans mon phone) On veut maintenant fabriquer un objet dans la base de données. Pour ce faire on utilise un modèle : un modele est une reprensaEntation en Javascript d'une instance / entité en base de données.
+const User = mongoose.model("User", UserSchema);      // le const User vient rendre UserSchema (ci-dessus) opérationnel. La constance User avec l'aide de mongoose va fabriquer une base de donnée "Book" (le 1er argument) en utilisant le BookSchema (2eme argument) 
 
 
-module.exports = { User };
+module.exports = { User };                            // On exporte ce nouveau schéma contenu dans "User.js" pour l'importer dans "users.controller.js"
 
